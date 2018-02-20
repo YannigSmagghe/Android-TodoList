@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="hello_world_biatch">hello_world_biatch</string>
+    <string name="click_me">click_me</string>
+    <string name="mon_button_2">Mon button 2</string>
+    <string name="mon_bouton_1">Change couleur</string>
+    <string name="mon_switch_1">mon switch 1</string>
+    <string name="mon_switch_2">mon switch 2</string>
+    <string name="btn_change_vue">change Vue</string>
+    <string name="color_change_toast">Couleur changée !</string>
+    <string name="do_something">Do Something</string>
+    <string name="todolist">ToDoList</string>
+    <string name="text_input">text</string>
+    <string name="placeholder_input">Ajoutez une nouvelle tâche ...</string>
+    <string name="title_todo_list">Ma ToDoList</string>
+</resources>
