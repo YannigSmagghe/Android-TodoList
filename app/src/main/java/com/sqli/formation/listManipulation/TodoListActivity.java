@@ -56,7 +56,6 @@ public class TodoListActivity extends AppCompatActivity {
         });
 
         // TODO : créer instance et l'adapter à la vue
-        mTodoTaskList.add("Test");
         mTaskAdapter = new TaskAdapater(this, mTodoTaskList);
         mListViewTodo.setAdapter(mTaskAdapter);
     }
