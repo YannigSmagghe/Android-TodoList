@@ -7,3 +7,7 @@
 /build
 /captures
 .externalNativeBuild
+
+\.idea/vcs\.xml
+
+app/src/main/res/values/attrs\.xml

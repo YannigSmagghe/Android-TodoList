@@ -1,6 +1,7 @@
 package com.sqli.formation.controls;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.support.constraint.ConstraintLayout;
 import android.text.Editable;
 import android.util.AttributeSet;
@@ -30,16 +31,18 @@ public class ClearableEditText extends ConstraintLayout {
     public ClearableEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         initView(context);
+        handleCustomAttributes(context, attrs);
     }
 
 
     public ClearableEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initView(context);
+        handleCustomAttributes(context, attrs);
     }
 
-    private void initView(Context context){
-        mRootView  = LayoutInflater.from(context).inflate(R.layout.clearable_edit_text_layout,this);
+    private void initView(Context context) {
+        mRootView = LayoutInflater.from(context).inflate(R.layout.clearable_edit_text_layout, this);
 
         mCurrentText = mRootView.findViewById(R.id.et_content_text);
 
@@ -53,15 +56,28 @@ public class ClearableEditText extends ConstraintLayout {
         });
     }
 
-    public void setOnEditorActionListener(TextView.OnEditorActionListener onEditorActionListener){
+    private void handleCustomAttributes(Context context, AttributeSet attrs) {
+        TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.ClearableEditText);
+        try {
+            String hint = array.getString(R.styleable.ClearableEditText_hint);
+            if (hint != null) {
+                mCurrentText.setHint(hint);
+            }
+        } finally {
+            array.recycle();
+        }
+    }
+
+    public void setOnEditorActionListener(TextView.OnEditorActionListener onEditorActionListener) {
         mCurrentText.setOnEditorActionListener(onEditorActionListener);
     }
 
-    public Editable getText(){
+    public Editable getText() {
         return mCurrentText.getText();
     }
 
-    public void setText(CharSequence text){
+    public void setText(CharSequence text) {
         mCurrentText.setText(text);
     }
+
 }

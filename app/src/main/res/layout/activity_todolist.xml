@@ -16,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:imeOptions="actionDone"
+        app:hint="@string/placeholder_input"
         />
 
     <ListView
